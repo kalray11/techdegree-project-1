@@ -56,7 +56,7 @@ const getRandomQuote = (array) => {
  * `printQuote` function
 ***/
 let html = '';
-const printQuote = () => {
+let printQuote = () => {
   let randomQuote = getRandomQuote(quotes);
   html += '<p class="quote">' + randomQuote.quote + '</p>';
   html += '<p class="source">' + randomQuote.source; 
