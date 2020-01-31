@@ -3,12 +3,8 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 /*** 
- * `quotes` array 
+Array of quotes including source, citation and year
 ***/
 const quotes =  [
   {
@@ -45,7 +41,7 @@ const quotes =  [
 
 
 /***
- * `getRandomQuote` function
+Pulls a random quote from quotes array
 ***/
 const getRandomQuote = (array) => {
   let randomNumber = Math.floor(Math.random() * array.length)
@@ -53,15 +49,22 @@ const getRandomQuote = (array) => {
 }
 
 /***
- * `printQuote` function
+Prints quote to page when the 'show another quote" button is clicked
 ***/
-let html = '';
+
 const printQuote = () => {
-  let randomQuote = getRandomQuote(quotes);
-  html += '<p class="quote">' + randomQuote.quote + '</p>';
-  html += '<p class="source">' + randomQuote.source; 
-  html += '</p>';
-  return html;
+  const randomQuote = getRandomQuote(quotes);
+  let html = '';
+  html += `
+  <p class="quote">${randomQuote.quote}</p>
+  <p class="source">${randomQuote.source}`
+  if (randomQuote.citation) {
+    html += `<span class="citation">${randomQuote.citation}</span>`
+  } if (randomQuote.year) {
+    html += `<span class="year">${randomQuote.year}</span>`
+  }
+  html += `</p>`;
+  document.getElementById('quote-box').innerHTML = html;
 }
 
 
@@ -70,6 +73,5 @@ const printQuote = () => {
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('quote-box').innerHTML = printQuote;
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
