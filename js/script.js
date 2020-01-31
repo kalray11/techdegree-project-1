@@ -7,7 +7,7 @@ const quotes =  [
   {
     quote: "Defining myself, as opposed to being defined by others, is one of the most difficult challenges I face." ,
     source: "Carol Moseley-Braun",
-    citation: "AZQuotes.com. Wind and Fly LTD, 2020. 30 January 2020. https://www.azquotes.com/quote/523549", 
+    citation: "AZQuotes.com. Wind and Fly LTD, 2020. 30 January 2020.", 
     occupation: "Politician, lawyer"
   },
   {
@@ -20,9 +20,9 @@ const quotes =  [
   {
     quote: "If everything was perfect, you would never learn and you would never grow.",
     source: "Beyonce Knowles",
-    citation: '"New Again: Destiny’s Child". Interview with Suzanne Hodges and Lorraine Bracco, www.interviewmagazine.com."',
+    citation: '"New Again: Destiny’s Child". Interview with Suzanne Hodges and Lorraine Bracco."',
     year: 2013,
-    occupation: "Singer, actress, songwriter, record producer, director, model, dancer, fashion designer, businesswoman"
+    occupation: "Singer, actress, songwriter, dancer"
   },
   {
     quote: "As long as we are not ourselves, we will try to be what other people are.",
@@ -80,8 +80,8 @@ const printQuote = () => {
   myBody.style.backgroundColor = getRandomColor(colors);
   document.getElementById('quote-box').innerHTML = html;
 }
-//Runs print quote function every 5 seconds
-setInterval(printQuote, 5000);
+//Runs print quote function every 10 seconds
+setInterval(printQuote, 10000);
 
 /***
  * click event listener for the print quote button
