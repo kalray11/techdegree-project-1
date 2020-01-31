@@ -11,7 +11,6 @@ const quotes =  [
     quote: "Defining myself, as opposed to being defined by others, is one of the most difficult challenges I face." ,
     source: "Carol Moseley-Braun, politician and lawyer" ,
     citation: "AZQuotes.com. Wind and Fly LTD, 2020. 30 January 2020. https://www.azquotes.com/quote/523549",
-    year: 2020
   },
   {
     quote: "Never be limited by other people’s limited imaginations.",
@@ -22,7 +21,7 @@ const quotes =  [
   {
     quote: "If everything was perfect, you would never learn and you would never grow.",
     source: "Beyonce Knowles",
-    citation: '"New Again: Destiny’s Child". Interview with Suzanne Hodges and Lorraine Bracco, www.interviewmagazine.com."',
+    citation: '"New Again: Destiny’s Child" Interview with Suzanne Hodges and Lorraine Bracco, www.interviewmagazine.com"',
     year: 2013
   },
   {
@@ -34,11 +33,10 @@ const quotes =  [
   {
     quote: "If you have no confidence in self, you are twice defeated in the race of life.",
     source: "Marcus Garvey",
-    citation: "hilosophy and opinions of Marcus Garvey: or, Africa for the Africans‎",
+    citation: "Philosophy and opinions of Marcus Garvey: or, Africa for the Africans‎",
     year: 1967
   }
 ];
-
 
 /***
 Pulls a random quote from quotes array
@@ -66,7 +64,6 @@ const printQuote = () => {
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
 }
-
 
 /***
  * click event listener for the print quote button
