@@ -39,6 +39,7 @@ const quotes =  [
     occupation: "Publisher, journalist"
   }
 ];
+
  const colors = [ '#d81fde','#1f85de', '#1f25de', '#781fde', '#1fded8', '#1fde78' ]
 
 /***
@@ -55,6 +56,13 @@ Pulls a random color from colors array
 const getRandomColor = (array) => {
   let randomColor = Math.floor(Math.random() * array.length)
   return array[randomColor];
+}
+
+// resets timer on interval 
+let timer = '';
+const myTimer = (func) => {
+  clearInterval(timer);
+  timer = setInterval(func, 10000);
 }
 
 /***
@@ -79,9 +87,11 @@ const printQuote = () => {
   html += `</p>`;
   myBody.style.backgroundColor = getRandomColor(colors);
   document.getElementById('quote-box').innerHTML = html;
+  myTimer(printQuote);
 }
-//Runs print quote function every 10 seconds
-setInterval(printQuote, 10000);
+
+// auto generates new quote after 10 seconds of inactivity
+myTimer(printQuote);
 
 /***
  * click event listener for the print quote button
